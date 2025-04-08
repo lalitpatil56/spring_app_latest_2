@@ -1,9 +1,9 @@
-version: 0.0
+version: 1
 Resources:
-  - myECSService:
+  - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: imagedefinitions:12  # ECS task definition with the revision number
+        TaskDefinition: "taskdef.json"  # Reference to the task definition file
         LoadBalancerInfo:
-          ContainerName: spring-app  # Container name as defined in the task definition
-          ContainerPort: 80  # The container port exposed
+          ContainerName: "spring-app"   # Must match your taskdef.json container name
+          ContainerPort: 80             # Must match the exposed port in your Dockerfile
