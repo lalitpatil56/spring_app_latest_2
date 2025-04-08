@@ -22,8 +22,10 @@ phases:
     - docker push $REPOSITORY_URI:$IMAGE_TAG
     - echo Writing imagedefinitions.json for ECS...
     - printf '[{"name":"spring-app","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+    - echo Writing appspec.yml...
     - cat imagedefinitions.json
 artifacts:
   files:
   - imagedefinitions.json
+  - appspec.yml
   - target/demo-1.0.0.jar
