@@ -5,7 +5,7 @@ Resources:
       Properties:
         ClusterName: spring-boot-app # Your ECS cluster name
         ServiceName: blue-green  # Your ECS service name
-        TaskDefinition: imagedefinitions:12  # ECS task definition with the revision number
+        TaskDefinition: <TASK_DEFINITION>  # ECS task definition with the revision number
         LoadBalancerInfo:
           ContainerName: spring-app  # Container name as defined in the task definition
           ContainerPort: 80  # The container port exposed
